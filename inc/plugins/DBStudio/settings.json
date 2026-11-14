@@ -1,0 +1,89 @@
+{
+  "group": {
+    "name": "dbstudio",
+    "title": "DB Studio",
+    "description": "Controls access to DB Studio inside the Admin CP."
+  },
+  "settings": [
+    {
+      "name": "dbstudio_enabled",
+      "title": "Enable DB Studio",
+      "description": "Turn DB Studio on or off. When disabled, the module refuses every request, including administrators with permission.",
+      "optionscode": "yesno",
+      "value": "1",
+      "disporder": "1"
+    },
+    {
+      "name": "dbstudio_allowed_admins",
+      "title": "Additional Allowed Administrator UIDs",
+      "description": "Comma-separated administrator user IDs that may use the database manager in addition to administrators who hold the Admin CP permission. Leave empty to rely on the permission only. Super administrators always have access.",
+      "optionscode": "text",
+      "value": "",
+      "disporder": "2"
+    },
+    {
+      "name": "dbstudio_allowed_ips",
+      "title": "Allowed IP Addresses",
+      "description": "One IPv4 or IPv6 address or CIDR range per line. Leave empty to allow every IP address. Example: 203.0.113.7 or 2001:db8::/32.",
+      "optionscode": "textarea",
+      "value": "",
+      "disporder": "3"
+    },
+    {
+      "name": "dbstudio_auto_login",
+      "title": "Database Login Mode",
+      "description": "Automatic uses the database credentials from inc/config.php. Manual shows the DB Studio login form so the administrator types the database credentials.",
+      "optionscode": "select\n1=Automatic (use inc/config.php)\n0=Manual (show DB Studio login form)",
+      "value": "1",
+      "disporder": "4"
+    },
+    {
+      "name": "dbstudio_theme",
+      "title": "DB Studio Theme",
+      "description": "Choose the color theme used inside the embedded DB Studio page.",
+      "optionscode": "select\nauto=Automatic (browser preference)\nlight=Light\ndark=Dark",
+      "value": "auto",
+      "disporder": "5"
+    },
+    {
+      "name": "dbstudio_bind_ip",
+      "title": "Bind Session To IP Address",
+      "description": "Invalidate the database manager session when the client IP address changes. Disable this only if the administrator uses a connection whose IP address changes often.",
+      "optionscode": "yesno",
+      "value": "1",
+      "disporder": "6"
+    },
+    {
+      "name": "dbstudio_idle_timeout",
+      "title": "Idle Timeout (Minutes)",
+      "description": "Close the database manager session after this many minutes without a request. Set to 0 to disable the idle timeout. The Administrator must open the module again after a timeout.",
+      "optionscode": "numeric",
+      "value": "15",
+      "disporder": "7"
+    },
+    {
+      "name": "dbstudio_single_session",
+      "title": "One Session Per Administrator",
+      "description": "When enabled, opening the database manager closes any other database manager session for the same administrator.",
+      "optionscode": "yesno",
+      "value": "1",
+      "disporder": "8"
+    },
+    {
+      "name": "dbstudio_audit_log",
+      "title": "Write Audit Log",
+      "description": "Record database manager access and session events in the database for review.",
+      "optionscode": "yesno",
+      "value": "1",
+      "disporder": "9"
+    },
+    {
+      "name": "dbstudio_log_retention",
+      "title": "Audit Log Retention (Days)",
+      "description": "Delete audit log entries older than this many days. Set to 0 to keep every entry.",
+      "optionscode": "numeric",
+      "value": "90",
+      "disporder": "10"
+    }
+  ]
+}
